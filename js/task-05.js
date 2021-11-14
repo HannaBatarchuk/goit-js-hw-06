@@ -4,7 +4,7 @@ const nameOutput = document.querySelector('[id="name-output"]');
 nameInput.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
-    if (nameInput.value == ``) {
+    if (nameInput.value === ``) {
         return nameOutput.textContent = `Anonymous`;
     } else {
         return nameOutput.textContent = event.currentTarget.value;   

@@ -7,14 +7,26 @@ const ingredients = [
   'Condiments',
 ];
 
-const listIngredients = document.querySelector(`#ingredients`);
-console.log(listIngredients);
-const markupIngredients = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
+const ingredientsList = document.querySelector('#ingredients');
 
-listIngredients.innerHTML = markupIngredients;
-console.log(markupIngredients);
+const itemEl = ingredients.map((ingredient) => {
+  const ingredientsElement = document.createElement("li");
+  ingredientsElement.className = "item";
+  ingredientsElement.textContent = ingredient;
+  return ingredientsElement;
+});
+console.log(itemEl);
+ingredientsList.append(...itemEl)
+
+
+// const listOfIngredients = document.querySelector(`#ingredients`);
+// console.log(listOfIngredients);
+// const markupOfIngredients = ingredients
+//   .map((ingredient) => `<li class="item">${ingredient}</li>`)
+//   .join("");
+
+// listOfIngredients.innerHTML = markupOfIngredients;
+// console.log(markupOfIngredients);
 
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
